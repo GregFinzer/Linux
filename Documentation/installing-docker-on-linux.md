@@ -2,63 +2,22 @@
 
 ## 📦 Installing Docker with APT
 
-### Step 1: Update Package Index
-First, update your existing package list:
-
+### Step 1: Execute in the Terminal
 ```bash
+# 🐳 Install Docker
 sudo apt update
-```
-
-### Step 2: Install Prerequisites
-Install packages to allow apt to use a repository over HTTPS:
-
-```bash
-sudo apt install -y \
-    apt-transport-https \
-    ca-certificates \
-    curl \
-    gnupg \
-    lsb-release
-```
-
-### Step 3: Add Docker's Official GPG Key
-
-```bash
-sudo mkdir -m 0755 -p /etc/apt/keyrings
-curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
-```
-
-### Step 4: Set Up the Repository
-
-```bash
-echo \
-  "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu \
-  $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
-```
-
-### Step 5: Install Docker Engine
-
-```bash
-sudo apt update
-sudo apt install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
-```
-
-### Step 6: Verify Installation
-
-```bash
-sudo docker run hello-world
-```
-
-### Step 7: Add Your User to Docker Group (Optional)
-To run Docker without sudo:
-
-```bash
+sudo apt install docker.io docker-compose -y
+sudo systemctl enable docker
+sudo systemctl start docker
 sudo usermod -aG docker $USER
+
+# ✅ Verify installation
+docker --version
 ```
 
-**Note:** Log out and back in for this to take effect.
+### Step 2: Log Out
+Log out and log back in
 
----
 
 ## 🚀 Quick Reference - Docker Commands
 
