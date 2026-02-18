@@ -20,7 +20,7 @@ services:
       - "1433:1433"
     volumes:
       - sqlserver_data:/var/opt/mssql
-    restart: "no"
+    restart: "yes"
 volumes:
   sqlserver_data:
 EOF
