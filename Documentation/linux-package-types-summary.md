@@ -1,4 +1,4 @@
-# 🐧 Linux Package Types (with Emojis) — A Friendly Guide
+# 🐧 Linux Package Types
 
 Linux software can be delivered in a few major “package types.” Some are **distro-native** (tight integration, fast, reliable), and others are **universal / sandboxed** (portable across distros, usually larger, sometimes slower to start).
 
