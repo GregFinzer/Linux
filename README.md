@@ -27,4 +27,6 @@ My personal documentation and scripts while I am learning Linux.
 
 ## Scripts
 * <a href="Scripts/create-pwa.sh" target="_blank">Create PWA</a>
+* <a href="Scripts/ListLinuxPackages.sh" target="_blank">List Installed Linux Packages</a>
+* <a href="Scripts/SearchPackages.sh" target="_blank">Search for Linux Packages</a>
 
