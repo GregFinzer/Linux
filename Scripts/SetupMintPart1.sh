@@ -204,6 +204,9 @@ sudo flatpak install flathub me.iepure.devtoolbox -y --noninteractive
 # Install Git 
 sudo apt install git -y 
 
+# GitHub Desktop
+sudo flatpak install flathub io.github.shiftey.Desktop -y --noninteractive
+
 # API Testing
 sudo flatpak install flathub postman -y --noninteractive
 
