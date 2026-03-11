@@ -21,6 +21,7 @@ sudo apt update
 # apt-transport-https: https://manpages.debian.org/unstable/apt/apt-transport-https.1.en.html
 sudo apt install curl wget gpg apt-transport-https -y 
 
+# ******************** Package, Store Related
 # Flatpak with Flathub (Linux Mint Prefers this)
 # See:  https://docs.flathub.org/docs/for-users/installation
 sudo apt install flatpak -y 
@@ -32,6 +33,22 @@ flatpak update --appstream
 
 # Flatseal (allows you to change Flatpak permissions)
 sudo flatpak install flathub com.github.tchx84.Flatseal -y --noninteractive
+
+# Allow Linux Mint to use SNAP
+sudo rm /etc/apt/preferences.d/nosnap.pref
+sudo apt update
+sudo apt install snapd
+
+# Install GNOME Software as another store to browse apt, flatpak and snap
+sudo apt install gnome-software
+sudo apt install gnome-software-plugin-flatpak
+sudo apt install gnome-software-plugin-snap
+
+# KDE Discover Store
+# sudo apt install plasma-discover
+# sudo apt install plasma-discover-backend-flatpak
+# sudo apt install plasma-discover-backend-snap
+
 
 # 🎬 ******************* Media 
 # Pinta (like Micrsoft Paint)
@@ -98,6 +115,8 @@ sudo flatpak install flathub com.collaboraoffice.Office -y --noninteractive
  
 # 🧰 ******************* Install Utilities 
 
+# Like Directory Opus Get Sizes
+sudo apt install qdirstat
 
 # Firewall GUI (like Windows Defender Firewall)
 # This is already on Linux Minut
@@ -106,7 +125,7 @@ sudo flatpak install flathub com.collaboraoffice.Office -y --noninteractive
 # LocalSend (like airdrop, snapdrop or filedrop)
 sudo flatpak install flathub org.localsend.localsend_app -y --noninteractive
 
-# Timeshift (like system restore)
+# Timeshift (like system restore) (Linux mint already has this installed by default)
 # apt install timeshift -y
 
 # Like SysMain (SuperFetch)
@@ -145,12 +164,6 @@ fi
 systemctl --user enable syncthing 
 systemctl --user start syncthing 
 
-# Thunar (like directory opus or total commander using split view) 
-# Linux mint already has a split view with Nemo File Manager
-#sudo apt install thunar -y 
-#sudo apt install thunar-archive-plugin -y
-#sudo apt install thunar-data -y
-#sudo apt install thunar-volman -y
 
 # View chm files 
 sudo apt install xchm -y
@@ -234,18 +247,8 @@ sudo apt update &&
 sudo apt install code # or code-insiders
 
 
-# Install Rider 
-sudo flatpak install flathub rider -y --noninteractive 
-sudo flatpak override com.jetbrains.Rider --filesystem=host
-sudo flatpak override com.jetbrains.Rider --device=all
-sudo flatpak override com.jetbrains.Rider --allow=devel
-sudo flatpak override com.jetbrains.Rider --socket=system-bus
-sudo flatpak override com.jetbrains.Rider --socket=session-bus
-sudo flatpak override com.jetbrains.Rider --socket=fallback-x11
-sudo flatpak override com.jetbrains.Rider --socket=wayland
-sudo flatpak override com.jetbrains.Rider --socket=ssh-auth
-sudo flatpak override com.jetbrains.Rider --socket=cups
-sudo flatpak override com.jetbrains.Rider --socket=pcsc
+# Install Rider (the only SNAP package in this script because the Flatpak is not official)
+sudo snap install rider --classic 
 
 # Install .NET Version 8 SDK 
 wget https://dot.net/v1/dotnet-install.sh -O dotnet-install.sh 
