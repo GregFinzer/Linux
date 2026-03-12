@@ -7,6 +7,7 @@ SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
 cd "$SCRIPT_DIR"
 chmod +x InstallFromRemote.sh
 chmod +x create-pwa.sh
+chmod +x flatpak-full-permissions.sh
 
 # 📁 Go to Downloads as we will be downloading stuff 
 cd ~/Downloads 
@@ -60,7 +61,8 @@ sudo apt install gnome-software-plugin-snap
 # sudo apt install plasma-discover-backend-snap
 
 # Remove the Linux Mint Store since we will use GNOME Software because it supports flatpak and snap
-sudo apt remove mintinstall -y
+# Keep it since it displays the flatpak name
+# sudo apt remove mintinstall -y
 
 
 # 🎬 ******************* Media 
@@ -125,6 +127,7 @@ xdg-settings set default-web-browser google-chrome.desktop
 
 # 🖇️ ******************* Office 
 sudo flatpak install flathub com.todoist.Todoist -y
+#Already installed on Linux Mint
 # sudo flatpak install flathub org.libreoffice.LibreOffice -y --noninteractive
 sudo flatpak install flathub org.onlyoffice.desktopeditors -y --noninteractive
 sudo flatpak install flathub com.collaboraoffice.Office -y --noninteractive
@@ -133,15 +136,15 @@ sudo flatpak install flathub com.collaboraoffice.Office -y --noninteractive
 # A better console than GNOME Terminal on Linux Mint
 sudo apt install konsole -y
 
+# Like Directory Opus Get Sizes
+sudo apt install filelight -y
+sudo apt install qml-module-qtquick-shapes -y
+
 # A better file manager than nemo on Linux Mint
 sudo apt install dolphin -y
 
 # Plugins for dolphin
 sudo apt install dolphin-plugins kio-extras ark kfind -y
-
-# Like Directory Opus Get Sizes
-sudo apt install filelight -y
-sudo apt install qml-module-qtquick-shapes -y
 
 # Replace Nemo with Dolphin and GNOME Terminal with Konsole for defaults and shortcuts
 xdg-mime default org.kde.dolphin.desktop inode/directory
@@ -250,6 +253,11 @@ sudo apt install searchmonkey -y
 # Another Nice Online Photo Editor
 "$SCRIPT_DIR/create-pwa.sh" https://www.photopea.com/
 
+# Bottles
+sudo flatpak install flathub com.usebottles.bottles -y --noninteractive
+
+# Give the flatpak all permissions
+"$SCRIPT_DIR/flatpak-full-permissions.sh" com.usebottles.bottles
 
 # 👨‍💻 ******************* Install Developer Tools 
 
