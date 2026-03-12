@@ -1,6 +1,7 @@
 # 🐧 SQL Server on Linux with Docker — Easy Setup Guide
 
-I have created two easy-to-use scripts to install Docker and get SQL Server running. 🚀
+I have created two easy-to-use scripts to install Docker and get SQL Server running.
+It only works on Ubuntu (Not Linux Mint) 🚀
 
 ---
 

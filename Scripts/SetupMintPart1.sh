@@ -21,7 +21,17 @@ sudo apt update
 # apt-transport-https: https://manpages.debian.org/unstable/apt/apt-transport-https.1.en.html
 sudo apt install curl wget gpg apt-transport-https -y 
 
-# ******************** Package, Store Related
+# Turn on Firewall
+sudo ufw --force enable
+
+# Firewall GUI (like Windows Defender Firewall)
+# This is already on Linux Mint
+# sudo apt install gufw -y
+
+# 🛒 ******************** Package, Store Related
+# Ye ole store for only apt packages
+sudo apt install synaptic -y 
+
 # Flatpak with Flathub (Linux Mint Prefers this)
 # See:  https://docs.flathub.org/docs/for-users/installation
 sudo apt install flatpak -y 
@@ -49,6 +59,9 @@ sudo apt install gnome-software-plugin-snap
 # sudo apt install plasma-discover-backend-flatpak
 # sudo apt install plasma-discover-backend-snap
 
+# Remove the Linux Mint Store since we will use GNOME Software because it supports flatpak and snap
+sudo apt remove mintinstall -y
+
 
 # 🎬 ******************* Media 
 # Pinta (like Micrsoft Paint)
@@ -62,6 +75,9 @@ sudo flatpak install flathub drawio -y --noninteractive
 
 # Spotify
 sudo flatpak install flathub spotify -y --noninteractive
+
+# DeaDBeef (like Media Play with Shuffle for mp3s)
+sudo snap install deadbeef-vs 
 
 # VLC (like Media Player or Any Video Converter)
 sudo flatpak install flathub org.videolan.VLC -y --noninteractive
@@ -114,13 +130,38 @@ sudo flatpak install flathub org.onlyoffice.desktopeditors -y --noninteractive
 sudo flatpak install flathub com.collaboraoffice.Office -y --noninteractive
  
 # 🧰 ******************* Install Utilities 
+# A better console than GNOME Terminal on Linux Mint
+sudo apt install konsole -y
+
+# A better file manager than nemo on Linux Mint
+sudo apt install dolphin -y
+
+# Plugins for dolphin
+sudo apt install dolphin-plugins kio-extras ark kfind -y
 
 # Like Directory Opus Get Sizes
-sudo apt install qdirstat
+sudo apt install filelight -y
+sudo apt install qml-module-qtquick-shapes -y
 
-# Firewall GUI (like Windows Defender Firewall)
-# This is already on Linux Minut
-# sudo apt install gufw -y
+# Replace Nemo with Dolphin and GNOME Terminal with Konsole for defaults and shortcuts
+xdg-mime default org.kde.dolphin.desktop inode/directory
+xdg-mime default org.kde.dolphin.desktop application/x-gnome-saved-search
+
+# Setting Konsole as the default terminal
+gsettings set org.cinnamon.desktop.default-applications.terminal exec 'konsole'
+gsettings set org.cinnamon.desktop.default-applications.terminal exec-arg '-e'
+
+# Configuring Cinnamon keyboard shortcuts
+
+# Super + E → Dolphin
+gsettings set org.cinnamon.desktop.keybindings.media-keys home "['<Super>e']"
+
+# Ctrl + Alt + T → Konsole
+gsettings set org.cinnamon.desktop.keybindings.media-keys terminal "['<Primary><Alt>t']"
+
+
+# Like Directory Opus Get Sizes
+sudo apt install qdirstat -y
 
 # LocalSend (like airdrop, snapdrop or filedrop)
 sudo flatpak install flathub org.localsend.localsend_app -y --noninteractive
@@ -164,6 +205,8 @@ fi
 systemctl --user enable syncthing 
 systemctl --user start syncthing 
 
+# Scheduled backups
+# ssudo flatpak install flathub org.gnome.World.PikaBackup -y --noninteractive
 
 # View chm files 
 sudo apt install xchm -y
@@ -180,7 +223,10 @@ chsh -s $(which fish)
 sudo apt install stacer -y 
 
 # Mission Center (like Task Manager)
-sudo flatpak install flathub mission-center
+sudo flatpak install flathub io.missioncenter.MissionCenter -y
+
+# Resources (like Task Manager)
+# sudo flatpak install flathub net.nokyan.Resources -y
 
 # Beyond Compare 
 "$SCRIPT_DIR/InstallFromRemote.sh" https://www.scootersoftware.com/download .deb
@@ -188,9 +234,11 @@ sudo flatpak install flathub mission-center
 # Searchmonkey (like grep but with a GUI)
 sudo apt install searchmonkey -y
  
+# Like Crystal Disk Mark
+# sudo flatpak install flathub KDiskMark -y --noninteractive
 
-# 🛒 ******************* App Stores 
-sudo apt install synaptic -y 
+# Weather App
+# sudo flatpak install flathub io.github.amit9838.mousam -y --noninteractive
 
 # PWA 
 # Regular Expression Tester

@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# This only works with Ubuntu (Not Linux Mint, See SetupMintPart1.sh and SetupMintPart2.sh)
+
 # 📁 Create directory
 mkdir -p ~/docker/sqlserver
 
