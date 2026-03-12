@@ -22,7 +22,7 @@ sudo apt update
 # apt-transport-https: https://manpages.debian.org/unstable/apt/apt-transport-https.1.en.html
 sudo apt install curl wget gpg apt-transport-https -y 
 
-# Turn on Firewall
+# 🔥🧱 Turn on Firewall
 sudo ufw --force enable
 
 # Firewall GUI (like Windows Defender Firewall)
@@ -140,15 +140,15 @@ sudo apt install konsole -y
 sudo apt install filelight -y
 sudo apt install qml-module-qtquick-shapes -y
 
-# A better file manager than nemo on Linux Mint
-sudo apt install dolphin -y
+# A better file manager than nemo on Linux Mint (flakey on Mint)
+# sudo apt install dolphin -y
 
 # Plugins for dolphin
-sudo apt install dolphin-plugins kio-extras ark kfind -y
+# sudo apt install dolphin-plugins kio-extras ark kfind -y
 
 # Replace Nemo with Dolphin and GNOME Terminal with Konsole for defaults and shortcuts
-xdg-mime default org.kde.dolphin.desktop inode/directory
-xdg-mime default org.kde.dolphin.desktop application/x-gnome-saved-search
+#xdg-mime default org.kde.dolphin.desktop inode/directory
+#xdg-mime default org.kde.dolphin.desktop application/x-gnome-saved-search
 
 # Setting Konsole as the default terminal
 gsettings set org.cinnamon.desktop.default-applications.terminal exec 'konsole'
@@ -156,10 +156,10 @@ gsettings set org.cinnamon.desktop.default-applications.terminal exec-arg '-e'
 
 # Configuring Cinnamon keyboard shortcuts
 
-# Super + E → Dolphin
+# Super + E → Files
 gsettings set org.cinnamon.desktop.keybindings.media-keys home "['<Super>e']"
 
-# Ctrl + Alt + T → Konsole
+# Ctrl + Alt + T → Terminal
 gsettings set org.cinnamon.desktop.keybindings.media-keys terminal "['<Primary><Alt>t']"
 
 
@@ -233,6 +233,14 @@ sudo flatpak install flathub io.missioncenter.MissionCenter -y
 
 # Beyond Compare 
 "$SCRIPT_DIR/InstallFromRemote.sh" https://www.scootersoftware.com/download .deb
+
+# Configure Diff
+git config --global diff.tool bc
+git config --global difftool.bc.trustExitCode true
+
+# Configure Merge
+git config --global merge.tool bc
+git config --global mergetool.bc.trustExitCode true
 
 # Searchmonkey (like grep but with a GUI)
 sudo apt install searchmonkey -y
