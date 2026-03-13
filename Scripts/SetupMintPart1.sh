@@ -66,6 +66,9 @@ sudo apt install gnome-software-plugin-snap
 
 
 # 🎬 ******************* Media 
+# GIMP (like Photoshop)
+sudo flatpak install flathub org.gimp.GIMP -y --noninteractive
+
 # Pinta (like Micrsoft Paint)
 sudo flatpak install flathub pinta -y --noninteractive
 
