@@ -8,8 +8,7 @@ cd "$SCRIPT_DIR"
 chmod +x InstallFromRemote.sh
 chmod +x create-pwa.sh
 chmod +x flatpak-full-permissions.sh
-chmod +x InstallSqlServerOnUbuntuPart1.sh
-chmod +x InstallSqlServerOnUbuntuPart2.sh
+chmod +x InstallSqlServerOnKUbuntu.sh
 
 # 📁 Go to Downloads as we will be downloading stuff 
 cd ~/Downloads 
@@ -164,26 +163,6 @@ sudo flatpak install flathub bleachbit -y
 # KDE Connect (like Phone Link on Windows) (already on KDE)
 # sudo flatpak install flathub kdeconnect -y
 
-# Syncthing (like a free Dropbox or Onedrive)
-echo "📦 Installing Syncthing..."
-sudo apt install -y syncthing
-
-echo "🚀 Launching Syncthing..."
-if command -v gnome-terminal >/dev/null; then
-    gnome-terminal -- bash -c "syncthing; exec bash"
-elif command -v x-terminal-emulator >/dev/null; then
-    x-terminal-emulator -e syncthing
-elif command -v konsole >/dev/null; then
-    konsole -e syncthing
-else
-    echo "⚠️ No supported terminal found."
-    syncthing &
-fi
-
-# Auto-start Syncthing 
-systemctl --user enable syncthing 
-systemctl --user start syncthing 
-
 # Scheduled backups
 # ssudo flatpak install flathub org.gnome.World.PikaBackup -y
 
@@ -196,7 +175,7 @@ sudo flatpak install flathub filezilla -y
 # Install Fish Shell and make it the default (you have to logout and log back in to see the changes)
 # After run this and change them to Darkula:  fish_config
 sudo apt install fish -y 
-chsh -s $(which fish) 
+sudo chsh -s $(which fish)
 
 # Stacer (Like Task Manager and manage startup programs) 
 sudo apt install stacer -y 
@@ -314,4 +293,28 @@ git clone https://github.com/GregFinzer/BedBrigadeNational.git
 
 # Setup Docker and SQL Server
 cd "$SCRIPT_DIR"
-./InstallSqlServerOnUbuntuPart1.sh
+./InstallSqlServerOnKUbuntu.sh
+
+# Oracle VirtualBox
+"$SCRIPT_DIR/InstallFromRemote.sh" https://www.virtualbox.org/wiki/Linux_Downloads noble_amd64.deb
+wget https://download.virtualbox.org/virtualbox/7.2.6/Oracle_VirtualBox_Extension_Pack-7.2.6.vbox-extpack
+
+# Syncthing (like a free Dropbox or Onedrive)
+echo "📦 Installing Syncthing..."
+sudo apt install -y syncthing
+
+echo "🚀 Launching Syncthing..."
+if command -v gnome-terminal >/dev/null; then
+    gnome-terminal -- bash -c "syncthing; exec bash"
+elif command -v x-terminal-emulator >/dev/null; then
+    x-terminal-emulator -e syncthing
+elif command -v konsole >/dev/null; then
+    konsole -e syncthing
+else
+    echo "⚠️ No supported terminal found."
+    syncthing &
+fi
+
+# Auto-start Syncthing
+systemctl --user enable syncthing
+systemctl --user start syncthing

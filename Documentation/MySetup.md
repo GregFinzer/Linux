@@ -1,6 +1,25 @@
-# Manual Steps Needed for Development Environment Setup
+# My Development Environment Setup on KUbuntu
 
-## Important
+## Prep and Script Install
+1. Configure power settings never to sleep.  Configure critical battern to shut down.  Sleep does not work on Linux.</li>
+2. Open a terminal and enter:
+    ```bash
+    sudo apt update && sudo apt upgrade
+    reboot
+    ```
+3.  After the reboot open a terminal and enter:
+    ```bash
+    mkdir aaGit
+    cd aaGit
+    git clone https://github.com/GregFinzer/Linux.git
+    cd Linux/Scripts
+    chmod +x SetupKUbuntu.sh
+    ./SetupKUbuntu.sh
+    ```
+4.  Reboot 
+
+
+## Important Manual Steps
 <ol>
     <li>In Brave Sync Settings</li>
     <li>Create Greg Profile in Chrome</li>
@@ -28,14 +47,14 @@
     </ul>
 </ol>
 
-## Semi-Important
+## Semi-Important Manual Steps
 <ol>
     <li>Configure a NetFramework Bottle using <a href="Bottles-Configuration.md">Bottles Configuration</a></li>
     <li>Install Notepad++ in the Bottle</li>
     <li>Install Developer Multitool in the Bottle</li>
 </ol>
 
-## Not as Important
+## Not as Important Manual Steps
 <ol>
     <li>Login to Spotify</li>
     <li>Sync Firefox Settings</li>
