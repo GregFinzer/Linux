@@ -132,10 +132,6 @@ sudo flatpak install flathub com.collaboraoffice.Office -y
 # 🧰 ******************* Install Utilities 
 
 # Like Directory Opus Get Sizes
-sudo apt install filelight -y
-sudo apt install qml-module-qtquick-shapes -y
-
-# Like Directory Opus Get Sizes
 sudo apt install qdirstat -y
 
 # Plugins for dolphin
@@ -297,7 +293,7 @@ cd "$SCRIPT_DIR"
 
 # Oracle VirtualBox
 "$SCRIPT_DIR/InstallFromRemote.sh" https://www.virtualbox.org/wiki/Linux_Downloads noble_amd64.deb
-wget https://download.virtualbox.org/virtualbox/7.2.6/Oracle_VirtualBox_Extension_Pack-7.2.6.vbox-extpack
+wget -P ~/Downloads https://download.virtualbox.org/virtualbox/7.2.6/Oracle_VirtualBox_Extension_Pack-7.2.6.vbox-extpack
 
 # Syncthing (like a free Dropbox or Onedrive)
 echo "📦 Installing Syncthing..."
