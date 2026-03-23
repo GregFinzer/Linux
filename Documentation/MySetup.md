@@ -35,7 +35,7 @@
     <li>Configure GitHub Co-pilot in VSCode</li>
     <li>Configure sites in Filezilla</li>
     <li>Go into keyboard shortcuts and add super f to launch searchmonkey</li>
-    <li>Go into shortcuts and overwrite the super l to do a lock</li>
+    <li>In Dolphin, Menu => Configure => View Modes => Date Style Absolute</li>    
     <li>Setup/Copy Windows 11 VirtualBox with this software</li>
     <ul>
         <li>Office with Publisher</li>
@@ -52,6 +52,7 @@
     <li>Configure a NetFramework Bottle using <a href="Bottles-Configuration.md">Bottles Configuration</a></li>
     <li>Install Notepad++ in the Bottle</li>
     <li>Install Developer Multitool in the Bottle</li>
+    <li>Install Paint.NET 3.5 in the Bottle</li>
 </ol>
 
 ## Not as Important Manual Steps
