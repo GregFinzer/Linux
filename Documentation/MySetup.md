@@ -35,7 +35,7 @@
     <li>Configure GitHub Co-pilot in VSCode</li>
     <li>Configure sites in Filezilla</li>
     <li>Go into keyboard shortcuts and add super f to launch searchmonkey</li>
-    <li>In Dolphin, Menu => Configure => View Modes => Date Style Absolute</li>    
+    <li>In Dolphin, Menu => Configure => View Modes => Date Style Absolute</li>        
     <li>Setup/Copy Windows 11 VirtualBox with this software</li>
     <ul>
         <li>Office with Publisher</li>
@@ -46,6 +46,36 @@
         <li>PicPick</li>
     </ul>
 </ol>
+
+## Add dotnet to the path
+```bash
+nano ~/.bashrc    
+```
+
+Add this at the end
+```bash
+export DOTNET_ROOT=$HOME/.dotnet
+export PATH=$PATH:$HOME/.dotnet:$HOME/.dotnet/tools
+```
+
+Reload
+```bash
+source ~/.bashrc
+```
+
+## Add dotnet to VS Code
+In the VS Code Terminal
+```bash
+nano ~/.profile
+```
+
+Add to the end
+```bash
+export DOTNET_ROOT=$HOME/.dotnet
+export PATH=$PATH:$HOME/.dotnet:$HOME/.dotnet/tools
+```
+
+Close and reopen VS Code
 
 ## Semi-Important Manual Steps
 <ol>
