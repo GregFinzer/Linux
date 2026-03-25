@@ -1,13 +1,14 @@
 # My Development Environment Setup on KUbuntu
 
 ## Prep and Script Install
-1. Configure power settings never to sleep.  Configure critical battern to shut down.  Sleep does not work on Linux.</li>
-2. Open a terminal and enter:
+1. Open Timeshift and create the initial backup.  Configure daily backups.  Keep 5.
+2. Configure power settings never to sleep.  Configure critical battern to shut down.  Sleep does not work on Linux.</li>
+3. Open a terminal and enter:
     ```bash
     sudo apt update && sudo apt upgrade
     reboot
     ```
-3.  After the reboot open a terminal and enter:
+4.  After the reboot open a terminal and enter:
     ```bash
     mkdir aaGit
     cd aaGit
@@ -16,7 +17,7 @@
     chmod +x SetupKUbuntu.sh
     ./SetupKUbuntu.sh
     ```
-4.  Reboot 
+5.  Reboot 
 
 
 ## Important Manual Steps
