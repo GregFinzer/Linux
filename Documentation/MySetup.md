@@ -1,27 +1,32 @@
 # My Development Environment Setup on KUbuntu
 
 ## Prep and Script Install
-1. Open Timeshift and create the initial backup.  Configure daily backups.  Keep 5.
-2. Configure power settings never to sleep.  Configure critical battern to shut down.  Sleep does not work on Linux.</li>
-3. Open a terminal and enter:
-    ```bash
-    sudo apt update && sudo apt upgrade
-    reboot
-    ```
-4.  After the reboot open a terminal and enter:
-    ```bash
-    mkdir aaGit
-    cd aaGit
-    git clone https://github.com/GregFinzer/Linux.git
-    cd Linux/Scripts
-    chmod +x SetupKUbuntu.sh
-    ./SetupKUbuntu.sh
-    ```
-5.  Reboot 
 
+1. In the BIOS, disable secure boot, disable fast boot, and enable hardware virtualization
+2. Open Timeshift and create the initial backup. Configure daily backups. Keep 5.
+3. Configure power settings never to sleep. Configure critical battern to shut down. Sleep does not work on Linux.</li>
+4. Open a terminal and enter:
+   ```bash
+   sudo apt update && sudo apt upgrade
+   reboot
+   ```
+5. After the reboot open a terminal and enter:
+   ```bash
+   mkdir _git
+   cd _git
+   git clone https://github.com/GregFinzer/Linux.git
+   cd Linux/Scripts
+   chmod +x SetupKUbuntu.sh
+   ./SetupKUbuntu.sh
+   ```
+6. Reboot
 
 ## Important Manual Steps
+
 <ol>
+    <li>Install OpenDeck for the desktop computer</li>
+    <li>Add SyncThing, Teams, and OpenDeck to run on Startup</li>
+    <li>Make Brave the Default Browser in System Settings</li>
     <li>In Brave Sync Settings</li>
     <li>Create Greg Profile in Chrome</li>
     <li>Create Bed Brigade Profile in Chrome</li>
@@ -48,29 +53,43 @@
     </ul>
 </ol>
 
-## Add dotnet to the path
+## Install NVidia Drivers
+
 ```bash
-nano ~/.bashrc    
+sudo ubuntu-drivers devices
+sudo ubuntu-drivers autoinstall
+sudo reboot
+```
+
+## Add dotnet to the path
+
+```bash
+nano ~/.bashrc
 ```
 
 Add this at the end
+
 ```bash
 export DOTNET_ROOT=$HOME/.dotnet
 export PATH=$PATH:$HOME/.dotnet:$HOME/.dotnet/tools
 ```
 
 Reload
+
 ```bash
 source ~/.bashrc
 ```
 
 ## Add dotnet to VS Code
+
 In the VS Code Terminal
+
 ```bash
 nano ~/.profile
 ```
 
 Add to the end
+
 ```bash
 export DOTNET_ROOT=$HOME/.dotnet
 export PATH=$PATH:$HOME/.dotnet:$HOME/.dotnet/tools
@@ -79,6 +98,7 @@ export PATH=$PATH:$HOME/.dotnet:$HOME/.dotnet/tools
 Close and reopen VS Code
 
 ## Semi-Important Manual Steps
+
 <ol>
     <li>Configure a NetFramework Bottle using <a href="Bottles-Configuration.md">Bottles Configuration</a></li>
     <li>Install Notepad++ in the Bottle</li>
@@ -87,6 +107,7 @@ Close and reopen VS Code
 </ol>
 
 ## Not as Important Manual Steps
+
 <ol>
     <li>Login to Spotify</li>
     <li>Sync Firefox Settings</li>
