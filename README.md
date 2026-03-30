@@ -1,6 +1,9 @@
 # Linux
 My personal documentation and scripts while I am learning Linux.
 
+## My Setup Script for KUbuntu
+* <a href="Documentation/MySetup.md.md" target="_blank">My Setup</a>
+
 ## Documentation
 * <a href="Documentation/Bottles-Configuration.md" target="_blank">Bottles Configuration</a>
 * <a href="Documentation/ClamAntiVirus.md" target="_blank">Clam Antivirus</a>
@@ -36,4 +39,7 @@ My personal documentation and scripts while I am learning Linux.
 * <a href="Scripts/InstallFromRemote.sh" target="_blank">Install from Remote</a>
 * <a href="Scripts/ListLinuxPackages.sh" target="_blank">List Installed Linux Packages</a>
 * <a href="Scripts/SearchPackages.sh" target="_blank">Search for Linux Packages</a>
+* <a href="Scripts/SetupKUbuntuPart1.sh" target="_blank">Setup KUbuntu Part 1</a>
+* <a href="Scripts/SetupKUbuntuPart2.sh" target="_blank">Setup KUbuntu Part 2</a>
+
 

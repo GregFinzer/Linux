@@ -291,7 +291,7 @@ git config --global user.name "Greg Finzer"
 git config --global user.email "gfinzer@hotmail.com" 
 
 # Clone Repos
-cd ~/aaGit
+cd ~/_git
 git clone https://github.com/GregFinzer/BedBrigadeNational.git
 
 # Setup Docker and SQL Server
