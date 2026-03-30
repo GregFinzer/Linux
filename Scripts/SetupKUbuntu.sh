@@ -112,15 +112,22 @@ sudo curl -fsSLo /etc/apt/sources.list.d/brave-browser-release.sources https://b
 sudo apt update
 sudo apt install brave-browser -y
 
-# Firefox
+# Uninstall Firefox as a Snap
+sudo snap remove firefox
+
+# Firefox Flatpak
 sudo flatpak install flathub org.mozilla.firefox -y
 
 # Install Chrome 
 wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb 
 sudo apt install ./google-chrome-stable_current_amd64.deb 
 
-# Set Chrome as default browser 
-xdg-settings set default-web-browser google-chrome.desktop 
+# Set Brave as default browser 
+xdg-settings set default-web-browser brave-browser.desktop
+xdg-mime default brave-browser.desktop x-scheme-handler/http
+xdg-mime default brave-browser.desktop x-scheme-handler/https
+xdg-mime default brave-browser.desktop text/html 
+
 
 # 🖇️ ******************* Office 
 sudo flatpak install flathub com.todoist.Todoist -y
