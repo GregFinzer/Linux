@@ -39,7 +39,7 @@ echo "✅ Package listing complete."
 echo "🟢 APT Packages"
 echo "-----------------------------------------"
 if command -v apt >/dev/null 2>&1; then
-    apt list --installed 2>/dev/null | sed '1d'
+    apt list --installed 2>/dev/null | sed '1d' | grep -v '\[installed,automatic\]'
 else
     echo "⚠️  APT not available on this system."
 fi

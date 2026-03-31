@@ -6,3 +6,9 @@
 sudo add-apt-repository ppa:tatokis/ckb-next
 sudo apt update
 sudo apt install ckb-next -y
+
+# OpenDeck (like StreamDeck, but open source)
+sudo flatpak install me.amankhanna.opendeck -y
+
+# This is required for the OpenDeck Nuke button
+sudo apt install wmctrl xdotool -y
