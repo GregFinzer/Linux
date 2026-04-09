@@ -223,6 +223,8 @@ sudo apt install searchmonkey -y
 # "$SCRIPT_DIR/flatpak-full-permissions.sh" com.usebottles.bottles
 
 # 👨‍💻 ******************* Install Developer Tools 
+sudo flatpak install com.brainscanmedia.SafeScript -y
+
 # Data Beaver (Like Database.NET or SQL Server Management Studio)
 sudo flatpak install flathub io.dbeaver.DBeaverCommunity -y
 
