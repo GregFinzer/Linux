@@ -4,7 +4,7 @@
 
 1. In the BIOS, disable secure boot, disable fast boot, and enable hardware virtualization
 2. Open Timeshift and create the initial backup. Configure daily backups. Keep 5.
-3. Configure power settings never to sleep. Configure critical battern to shut down. Sleep does not work on Linux.</li>
+3. Configure power settings never to sleep. Configure critical battery to shut down. Sleep does not work on Linux.</li>
 4. Open a terminal and enter:
    ```bash
    sudo apt update && sudo apt upgrade
