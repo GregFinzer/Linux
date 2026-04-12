@@ -27,6 +27,7 @@ My personal documentation and scripts while I am learning Linux.
 * <a href="https://sixfootcoder.blogspot.com/2026/02/learning-linux-part-4-so-many-packages.html" target="_blank">Learning Linux Part 5: So many Package Types</a>
 * <a href="https://sixfootcoder.blogspot.com/2026/02/learning-linux-part-6-applications-for.html" target="_blank">Learning Linux Part 6: Applications for Linux</a>
 * <a href="https://sixfootcoder.blogspot.com/2026/03/learning-linux-part-7-why-i-am.html" target="_blank">Learning Linux Part 7: Why I am switching to Linux</a>
+* <a href="https://sixfootcoder.blogspot.com/2026/04/learning-linux-part-8-why-i-chose.html" target="_blank">Learning Linux Part 8: Why I choose KUbuntu</a>
 
 ## Cheat Sheets
 * <a href="https://cheatography.com/gregfinzer/cheat-sheets/linux-distributions/" target="_blank">Linux Distributions Cheat Sheet</a>
