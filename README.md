@@ -2,7 +2,7 @@
 My personal documentation and scripts while I am learning Linux.
 
 ## My Setup Script for KUbuntu
-* <a href="Documentation/MySetup.md.md" target="_blank">My Setup</a>
+* <a href="Documentation/MySetup.md" target="_blank">My Setup</a>
 
 ## Documentation
 * <a href="Documentation/Bottles-Configuration.md" target="_blank">Bottles Configuration</a>
