@@ -268,10 +268,10 @@ sudo apt install code # or code-insiders
 # Install Rider (the only SNAP package in this script because the Flatpak is not official)
 sudo snap install rider --classic 
 
-# Install .NET Version 8 SDK 
+# Install .NET Version 10 SDK 
 wget https://dot.net/v1/dotnet-install.sh -O dotnet-install.sh 
 chmod +x ./dotnet-install.sh 
-./dotnet-install.sh --channel 8.0 
+./dotnet-install.sh --channel 10.0
 
 # Install NVM and Node for Bash Shell 
 # curl -fsSL https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
