@@ -324,3 +324,6 @@ fi
 # Auto-start Syncthing
 systemctl --user enable syncthing
 systemctl --user start syncthing
+
+# Allow Syncthing through the firewall (if you don't do this, your logs will be full of UFW BLOCK messages)
+sudo ufw allow syncthing
