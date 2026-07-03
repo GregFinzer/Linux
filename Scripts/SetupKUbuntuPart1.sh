@@ -327,3 +327,7 @@ systemctl --user start syncthing
 
 # Allow Syncthing through the firewall (if you don't do this, your logs will be full of UFW BLOCK messages)
 sudo ufw allow syncthing
+
+# Allow KDE Connect through the firewall 
+sudo ufw allow 1714:1764/tcp
+sudo ufw allow 1714:1764/udp
